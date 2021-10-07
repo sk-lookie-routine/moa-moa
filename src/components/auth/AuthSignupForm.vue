@@ -1,14 +1,14 @@
 <template>
   <div class="auth_form">
-    <div class="auth_text">소셜 계정으로 간편 로그인</div>
+    <div class="auth_text">소셜 계정으로 간편 회원가입</div>
     <div class="auth_text_decoration"></div>
     <div class="auth_buttons">
-      <button><img src="../../assets/kakaoLogin.svg" /></button>
-      <button><img src="../../assets/googleLogin.svg" /></button>
+      <button><img src="../../assets/kakaoSignup.svg" /></button>
+      <button><img src="../../assets/googleSignup.svg" /></button>
     </div>
     <div class="auth_isMember">
-      아직 MOAMOA의 회원이 아니신가요?
-      <router-link to="/signup-form" class="auth_link">회원가입</router-link>
+      이미 MOAMOA의 회원이신가요?
+      <router-link to="/login" class="auth_link">로그인</router-link>
     </div>
     <div class="auth_etc">
       귀하는 MOAMOA의 이용약관과 개인정보처리방침을 읽고 이해했으며 그에
