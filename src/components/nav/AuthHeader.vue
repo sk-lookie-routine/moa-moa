@@ -1,7 +1,7 @@
 <template>
   <header>
-    <router-link to="/login"><img src="../../assets/logo.svg" class="icon" /></router-link>
-    <router-link to="/login" class="text">MOAMOA</router-link>
+    <router-link to="/"><img src="../../assets/logo.svg" class="icon" /></router-link>
+    <router-link to="/" class="text">MOAMOA</router-link>
   </header>
 </template>
 
@@ -11,19 +11,19 @@ export default {};
 
 <style scoped>
 header {
-  height: 70px;
+  height: 7rem;
   display: flex;
   align-items: center;
-  padding:0 40px;
+  padding:0 4rem;
 }
 .icon {
-  width: 42px;
-  height: 42px;
+  width: 4.2rem;
+  height: 4.2rem;
 }
 .text {
   font-family: "Krona One", sans-serif;
   color: #4e4e4e;
-  padding: 0 10px;
+  padding: 0 1rem;
   display: flex;
   text-decoration: none;
 }

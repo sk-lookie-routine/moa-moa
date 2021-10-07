@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
-import AuthForm from "../pages/AuthForm.vue";
-import AuthPage from "../pages/AuthPage.vue";
+import AuthSignupForm from "../pages/AuthSignupForm.vue";
+import AuthSignupPage from "../pages/AuthSignupPage.vue";
+import AuthLoginPage from '../pages/AuthLoginPage.vue';
 import Home from "../pages/Home.vue";
 
 const router = createRouter({
@@ -11,13 +12,17 @@ const router = createRouter({
             component: Home,
         },
         {
-            path: '/login',
-            component: AuthPage,
+            path: '/signup',
+            component: AuthSignupPage,
         },
         {
-            path: '/signup',
-            component: AuthForm,
+            path: '/signup-form',
+            component: AuthSignupForm,
         },
+        {
+            path: '/login',
+            component: AuthLoginPage,
+        }
     ],
 });
 

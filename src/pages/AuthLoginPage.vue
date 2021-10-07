@@ -4,12 +4,12 @@
 </template>
 
 <script>
-import AuthLoginForm from "../components/auth/AuthLoginForm.vue";
 import AuthHeader from "../components/nav/AuthHeader.vue";
+import AuthLoginForm from "../components/auth/AuthLoginForm.vue";
 export default {
   components: {
-    AuthLoginForm,
     AuthHeader,
+    AuthLoginForm,
   },
 };
 </script>
