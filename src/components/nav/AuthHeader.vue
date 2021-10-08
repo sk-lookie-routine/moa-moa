@@ -26,5 +26,6 @@ header {
   padding: 0 1rem;
   display: flex;
   text-decoration: none;
+  font-size:1.6rem;
 }
 </style>

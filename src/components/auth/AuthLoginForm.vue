@@ -4,7 +4,9 @@
     <div class="auth_text_decoration"></div>
     <div class="auth_buttons">
       <button><img src="../../assets/kakaoLogin.svg" /></button>
-      <button><img src="../../assets/googleLogin.svg" /></button>
+      <button @click="googleLoginBtn" id="google-login">
+        <img src="../../assets/googleLogin.svg" />
+      </button>
     </div>
     <div class="auth_isMember">
       아직 MOAMOA의 회원이 아니신가요?
@@ -18,6 +20,26 @@
 </template>
 
 <script>
+export default {
+  methods: {
+    async googleLoginBtn(){
+      const res = await fetch("http://localhost:8080/oauth2/authorization/naver", {
+        method: "POST"
+      });
+      console.log(res)
+    },
+    async onSuccess(googleUser) {
+      const user_join_type = "g";
+      const googleEmail = googleUser.getBasicProfile().pu;
+      // console.log(googleEmail);
+      const res = await fetch("http://localhost:8080/oauth2/authorization/naver", {
+        method: "POST"
+      });
+      const data = await res.json();
+      this.checkSnSLogin(data, googleEmail, user_join_type);
+    }, //구글 로그인 콜백함수 (실패) onFailure(error) { // eslint-disable-next-line console.log(error); },
+  },
+};
 </script>
 
 <style scoped>
@@ -40,15 +62,15 @@
   margin: 0.7px 47rem 0 47rem;
 }
 .auth_buttons {
-  margin:6rem 57.2rem 7.8rem 57.6rem;
+  margin: 6rem 57.2rem 7.8rem 57.6rem;
   display: flex;
   flex-direction: column;
 }
 button {
   background: none;
   border: none;
-  width:29.2rem;
-  height:4.4rem;
+  width: 29.2rem;
+  height: 4.4rem;
   margin-bottom: 1.2rem;
 }
 button:hover {
