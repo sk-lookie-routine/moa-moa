@@ -2,6 +2,7 @@
   <header>
     <router-link to="/"><img src="../../assets/logo.svg" class="icon" /></router-link>
     <router-link to="/" class="text">MOAMOA</router-link>
+    <!-- <div class="menu_icon"><img src="../../assets/menu_icon.svg" /></div> -->
   </header>
 </template>
 
@@ -28,4 +29,7 @@ header {
   text-decoration: none;
   font-size:1.6rem;
 }
+/* .menu_icon{
+  display: none;
+} */
 </style>

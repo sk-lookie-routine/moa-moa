@@ -4,8 +4,8 @@
 </template>
 
 <script>
-import AuthHeader from "../components/nav/AuthHeader.vue";
-import AuthLoginForm from "../components/auth/AuthLoginForm.vue";
+import AuthHeader from "../components/header/AuthHeader.vue";
+import AuthLoginForm from "../components/auth/AuthLogin.vue";
 export default {
   components: {
     AuthHeader,

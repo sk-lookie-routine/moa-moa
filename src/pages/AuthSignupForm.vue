@@ -3,7 +3,12 @@
   <div class="signup_form">
     <div class="title">회원가입</div>
     <div class="decoration"></div>
-    <div class="profile_img"></div>
+    <div class="profile_img">
+      <img :src="randomProfile.name" />
+      <button @click="randomImage">
+        <img src="../assets/random_btn.svg" class="randomBtn" />
+      </button>
+    </div>
     <div class="profile_info">
       <div class="nickname">
         닉네임 :
@@ -38,20 +43,44 @@
 </template>
 
 <script>
-import AuthHeader from "../components/nav/AuthHeader.vue";
+import AuthHeader from "../components/header/AuthHeader.vue";
 export default {
   components: { AuthHeader },
   data() {
     return {
       nickname: "",
       desc: "",
+      randomProfile: {
+        name: require("../assets/profile_img/profile_sc_o.svg"),
+      },
+      imgList: [
+        { name: require("../assets/profile_img/profile_sc_b.svg") },
+        { name: require("../assets/profile_img/profile_sc_o.svg") },
+        { name: require("../assets/profile_img/profile_sc_p.svg") },
+        { name: require("../assets/profile_img/profile_sc_r.svg") },
+        { name: require("../assets/profile_img/profile_sc_y.svg") },
+        { name: require("../assets/profile_img/profile_sq_b.svg") },
+        { name: require("../assets/profile_img/profile_sq_o.svg") },
+        { name: require("../assets/profile_img/profile_sq_p.svg") },
+        { name: require("../assets/profile_img/profile_sq_r.svg") },
+        { name: require("../assets/profile_img/profile_sq_y.svg") },
+        { name: require("../assets/profile_img/profile_tr_b.svg") },
+        { name: require("../assets/profile_img/profile_tr_o.svg") },
+        { name: require("../assets/profile_img/profile_tr_p.svg") },
+        { name: require("../assets/profile_img/profile_tr_r.svg") },
+        { name: require("../assets/profile_img/profile_tr_y.svg") },
+      ],
     };
   },
-  methods:{
-    changePage(){
-      this.$router.push('/login');
-    }
-  }
+  methods: {
+    changePage() {
+      this.$router.push("/login");
+    },
+    randomImage() {
+      let randomNumber = Math.floor(Math.random() * this.imgList.length);
+      this.randomProfile = this.imgList[randomNumber];
+    },
+  },
 };
 </script>
 
@@ -70,8 +99,25 @@ export default {
 .decoration {
   margin: 1.6rem 0 0 0;
   padding: 0;
-  border: 1px solid #d8d8d8;
+  border: 0.7px solid #d8d8d8;
   background: #d8d8d8;
+}
+.profile_img {
+  margin-top: 4.9rem;
+  margin-bottom: 6.1rem;
+  position: relative;
+  padding: 0;
+  width: 14.4rem;
+  height: 14.4rem;
+}
+.randomBtn {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  transition: all ease 0.5s;
+}
+.randomBtn:hover {
+  transform: rotate(45deg);
 }
 .nickname {
   font-family: Spoqa Han Sans Neo;
@@ -100,12 +146,16 @@ export default {
   justify-content: center;
   display: flex;
 }
+.moaBtn img {
+  width: 32rem;
+  height: 5.8rem;
+}
 button {
   margin-top: 10rem;
   border: none;
   background: none;
 }
-button:hover{
-  cursor:pointer;
+button:hover {
+  cursor: pointer;
 }
 </style>
