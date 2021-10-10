@@ -5,6 +5,7 @@
     <div class="decoration"></div>
     <div class="profile_img">
       <img :src="randomProfile.name" />
+      <div class="text">랜덤 변경</div>
       <button @click="randomImage">
         <img src="../assets/random_btn.svg" class="randomBtn" />
       </button>
@@ -32,20 +33,27 @@
       </div>
     </div>
     <div class="moaBtn">
-      <button v-if="nickname !== '' && desc !== ''" @click="changePage">
+      <button
+        v-if="nickname !== '' && desc !== ''"
+        @click="changePage"
+        class="startBtn"
+      >
         <img src="../assets/startBtn.svg" />
       </button>
       <button v-else>
         <img src="../assets/startBtnDeactive.svg" />
       </button>
     </div>
+    <my-footer></my-footer>
   </div>
+  
 </template>
 
 <script>
 import AuthHeader from "../components/header/AuthHeader.vue";
+import myFooter from "../components/footer/myFooter.vue";
 export default {
-  components: { AuthHeader },
+  components: { AuthHeader, myFooter },
   data() {
     return {
       nickname: "",
@@ -79,6 +87,7 @@ export default {
     randomImage() {
       let randomNumber = Math.floor(Math.random() * this.imgList.length);
       this.randomProfile = this.imgList[randomNumber];
+      console.log(randomNumber);
     },
   },
 };
@@ -88,6 +97,7 @@ export default {
 .signup_form {
   padding: 10.8rem 12rem 0 12rem;
   display: float;
+  height:129.7rem;
 }
 .title {
   font-family: Spoqa Han Sans Neo;
@@ -110,13 +120,28 @@ export default {
   width: 14.4rem;
   height: 14.4rem;
 }
+.text {
+  width: 4.7rem;
+  height: 1.4rem;
+  font-family: Spoqa Han Sans Neo;
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+  color: #ff994e;
+  position: absolute;
+  right: 0;
+}
 .randomBtn {
   position: absolute;
   right: 0;
   bottom: 0;
   transition: all ease 0.5s;
 }
+input:focus {
+  /* input 클릭 시 테두리 삭제 */
+  outline: none;
+}
 .randomBtn:hover {
+  cursor:pointer;
   transform: rotate(45deg);
 }
 .nickname {
@@ -137,14 +162,15 @@ export default {
 .text_ph,
 .desc_ph {
   font-family: Spoqa Han Sans Neo;
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   line-height: 2.6rem;
-  color: #bebebe;
+  color: #4e4e4e;
   border: none;
 }
 .moaBtn {
   justify-content: center;
   display: flex;
+  margin-bottom: 26rem;
 }
 .moaBtn img {
   width: 32rem;
@@ -155,7 +181,16 @@ button {
   border: none;
   background: none;
 }
-button:hover {
+.startBtn:hover {
   cursor: pointer;
+}
+@media (max-width: 500px) {
+  .signup_form{
+    margin:0 auto;
+    padding:0 2.4rem;
+  }
+  .title{
+    margin-top:4.3rem;
+  }
 }
 </style>

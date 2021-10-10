@@ -29,7 +29,9 @@ header {
   text-decoration: none;
   font-size:1.6rem;
 }
-/* .menu_icon{
-  display: none;
-} */
+@media (max-width: 500px) {
+  header{
+    padding:0 2.4rem;
+  }
+}
 </style>
