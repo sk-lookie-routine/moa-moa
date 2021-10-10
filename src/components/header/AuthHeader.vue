@@ -2,6 +2,7 @@
   <header>
     <router-link to="/"><img src="../../assets/logo.svg" class="icon" /></router-link>
     <router-link to="/" class="text">MOAMOA</router-link>
+    <!-- <div class="menu_icon"><img src="../../assets/menu_icon.svg" /></div> -->
   </header>
 </template>
 
@@ -27,5 +28,10 @@ header {
   display: flex;
   text-decoration: none;
   font-size:1.6rem;
+}
+@media (max-width: 500px) {
+  header{
+    padding:0 2.4rem;
+  }
 }
 </style>
