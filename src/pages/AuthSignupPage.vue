@@ -1,6 +1,6 @@
 <template>
   <auth-header></auth-header>
-  <auth-signup-form></auth-signup-form>
+  <auth-signup></auth-signup>
 </template>
 
 <script>

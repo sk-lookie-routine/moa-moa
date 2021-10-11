@@ -21,11 +21,7 @@
 </script>
 
 <style scoped>
-* {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
+
 .auth_text {
   font-family: noto-sans-cjk-kr, sans-serif;
   font-weight: 700;
@@ -43,7 +39,7 @@
 .auth_text_decoration {
   border: 0.7px solid #d8d8d8;
   background: #d8d8d8;
-  width: 47rem;
+  width: 50rem;
   margin: 0 auto;
 }
 .auth_buttons {

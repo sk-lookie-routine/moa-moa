@@ -16,8 +16,10 @@
         <input
           type="text"
           v-model="nickname"
-          placeholder="최대 N자"
+          placeholder="최대 8자"
           class="text_ph"
+          maxlength="8"
+          minlength="2"
         />
         <div class="decoration"></div>
       </div>
@@ -28,6 +30,7 @@
           v-model="desc"
           placeholder="한줄로 소개하세요."
           class="desc_ph"
+          maxlength="30"
         />
         <div class="decoration"></div>
       </div>
